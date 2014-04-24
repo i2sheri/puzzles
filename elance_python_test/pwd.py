@@ -5,7 +5,8 @@ s = re.compile('[a-z]')
 c = re.compile('[A-Z]')
 d = re.compile('[0-9]')
 for p in pwds:
-    if len(p) >=4 and len(p) <= 6 and re.search(p, s) and re.search(p, c) and (re.search(p, '*') or re.search(p, '#') or re.search(p, '+') or re.search(p, '@')):
+    if (len(p) >=4 and len(p) <= 6 and re.search(s, p) and re.search(c, p) and re.search(d, p) and
+        (re.search('*', p) or re.search('#', 'p') or re.search('+', p) or re.search('@', p)) and not re.search(' ', p)):
         res.append(p)
 print ','.join(res)
 
