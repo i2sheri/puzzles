@@ -30,8 +30,8 @@ class MissingTerm(object):
                 common_difference = diff[i]
             else:
                 index = i+2
-        return ap_series[0] + (index-1)*common_difference
+        print ap_series[0] + (index-1)*common_difference
 
 
 if __name__ == '__main__':
-    print MissingTerm(int(raw_input())).find(raw_input().split())
+    MissingTerm(int(raw_input())).find(raw_input().split())
