@@ -1,7 +1,7 @@
 1. Run in python-2.6.6 version and install argparse module.
 
 2. Use options -m and -o to pass input csv file and order
-Ex: python Restaurant.py -m menu.py -o "a b c"
+Ex: python value_meal.py -m menu.py -o "a b c"
 
 3. Separate order items with only one space character, enclose them in double quotes.
 Repetition of items in order will be considered as one item only.
