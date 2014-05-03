@@ -34,6 +34,6 @@ for c in colors:
             s = 'INVALID'
             break
         else:
-            s = s + '%X' %int(x)
+            s += '%X' %int(x)
     res.append(s)
 print ','.join(res)
