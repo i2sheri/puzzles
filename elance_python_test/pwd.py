@@ -1,16 +1,3 @@
-import re
-pwds = raw_input().split(',')
-res = []
-s = re.compile('[a-z]')
-c = re.compile('[A-Z]')
-d = re.compile('[0-9]')
-for p in pwds:
-    if (len(p) >=4 and len(p) <= 6 and re.search(s, p) and re.search(c, p) and re.search(d, p) and
-        (re.search('*', p) or re.search('#', 'p') or re.search('+', p) or re.search('@', p)) and not re.search(' ', p)):
-        res.append(p)
-print ','.join(res)
-
-
 """
 A bank has implemented criteria for determining whether
   the transaction passwords typed by customers of the bank are valid or not.
@@ -41,3 +28,16 @@ Abc@1,2w3E*
 
 Note: You should assume that input to the program is from console input (raw_input)
 """
+
+import re
+pwds = raw_input().split(',')
+res = []
+s = re.compile('[a-z]')
+c = re.compile('[A-Z]')
+d = re.compile('[0-9]')
+for p in pwds:
+    if (len(p) >=4 and len(p) <= 6 and re.search(s, p) and re.search(c, p) and
+        re.search(d, p) and (not re.search(' ', p)) and
+        (p.find('*') != -1 or p.find('#') != -1 or p.find('+') != -1 or p.find('@') != -1)):
+        res.append(p)
+print ','.join(res)
