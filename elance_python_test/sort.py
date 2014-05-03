@@ -13,5 +13,5 @@ hello,order,test,would
 Note: You should assume that input to the program is from console input (raw_input) """
 
 ip = raw_input().split(',')
-res = [x for x in sorted(ip)]
-print ','.join(res)
+print ','.join([x for x in sorted(ip)])
+#print ','.join(sorted(raw_input().split(',')))
