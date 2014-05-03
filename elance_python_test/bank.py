@@ -1,4 +1,3 @@
-
 """
 Write a program which accepts bank account transactions in a comma separated sequence and prints the net account balance. 
 The various transactions are classified as deposits (D) and withdrawals (W).
@@ -22,17 +21,14 @@ In this example, since the net balance was above $5000, 5 % interest has been ad
 Note: You should assume that input to the program is from console input (raw_input)
 """
 
-def run(ip):
-    bal = 0
-    for t in ip:
-        z = t.split('-')
-        if z[1] == 'D':
-            bal = bal + int(z[0])
-        else:
-            bal = bal - int(z[0])
-    if bal > 5000:
-        bal = bal + bal*5.0/100
-    print int(bal)
-
-if __name__ == "__main__":
-    run(raw_input().split(','))
+ip = raw_input().split(',')
+bal = 0
+for t in ip:
+    z = t.split('-')
+    if z[1] == 'D':
+        bal +=  int(z[0])
+    else:
+        bal -= int(z[0])
+if bal > 5000:
+    bal += bal*5/100
+print bal
