@@ -25,6 +25,6 @@ res = []
 for n in numbers:
     x = int(n)
     great = int(('9'*x))
-    great = great - great%x
+    great -= great%x
     res.append(str(great))
-print ','.join(res)    
+print ','.join(res)
