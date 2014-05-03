@@ -26,9 +26,9 @@ Note: If the output received is in decimal form, it should be rounded off to its
 Note: You should assume that input to the program is from console input (raw_input)
 """
 
-l = []
 ip = map(int, raw_input().split(','))
-for d in ip:
-    x = int(100*d/30)
-    l.append(str(round(x ** .5)))
+l = ['%d' %round(((100.0*d/30) ** .5)) for d in ip]
 print ','.join(l)
+
+#ip = raw_input().split(',')
+#l = ['%d' %round(((100.0*int(d)/30) ** .5)) for d in ip]
