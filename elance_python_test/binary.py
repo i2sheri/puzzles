@@ -16,8 +16,5 @@ Then, the output of the program should be:
 Note: You should assume that input to the program is from console input (raw_input) """
 
 bins = raw_input().split(',')
-copy = []
-for i in range(4):
-    if int(bins[i], 2)%3 == 0:
-        copy.append(bins[i])
-print ', '.join(copy)
+copy = [i for i in bins if int(i, 2)%3 == 0]
+print ','.join(copy)
