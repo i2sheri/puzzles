@@ -22,6 +22,5 @@ Files & I/O
 
 Result
 -------
-8 out of these 10 scripts were accepted resulting in a score of 57/100.
-
-For every accepted script min score is 60% i.e., 6/10.
+Attempt 2: 90/100
+Attempt 1: 57/100
