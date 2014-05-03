@@ -25,15 +25,11 @@ Then, the output should be:
 Note: You should assume that input to the program is from console input (raw_input)
 """
 
-res = 0
-l = []
-for r in xrange(3):
-    l.append(int(raw_input()))
+l = [int(raw_input()) for r in xrange(3)]
 for r in l:
     if r > 300:
-        res = (r-300)*80 + (100*60) + (200*70)
+        print (r-300)*80 + 20000 # (100*60) + (200*70)
     elif r > 100:
-        res = (r-100)*70 + (100*60)
+        print (r-100)*70 + 6000 # (100*60)
     else:
-        res = r*60
-    print res
+        print r*60
