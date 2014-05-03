@@ -1,16 +1,15 @@
 Elance gives you a rating based on a programming test.
 
 
-Python Programming Skills Test (Hands-on programming skills)
-============================================================
-
+Python Hand-on Programming Test
+===============================
 10 Questions
 110 minutes
 Pass score: 60/100
 
 
-Syllabus
-=============
+Syllabus :P
+-----------------------
 Loop Control
 Operators
 String Handling
@@ -21,6 +20,6 @@ Numbers
 Files & I/O
 
 Result
--------
+------------------
 Attempt 2: 90/100
 Attempt 1: 57/100
