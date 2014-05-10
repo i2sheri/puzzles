@@ -22,6 +22,6 @@ QUESTION = ("g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc "
             "ml rfc spj.")
 
 
-# Recommended
+# Recommended Approach
 CIPHER = string.lowercase[:]
 print QUESTION.translate(string.maketrans(CIPHER, CIPHER[2:] + 'ab'))
