@@ -30,24 +30,25 @@ class Restaurant(object):
         with open(self.__menu_file, 'rb') as menu_file:
             reader = csv.reader(menu_file)
             for row in reader:
-                rest = int(row[0])
-                item, is_combo = get_item(row)
-                rest_menu = self.menu.get(rest)
-                if is_combo:
-                    if rest_menu:
-                        combo = rest_menu.get('combo')
-                        if combo:
-                            combo[item] = float(row[1])
+                if len(row) > 0:
+                    rest = int(row[0])
+                    item, is_combo = get_item(row)
+                    rest_menu = self.menu.get(rest)
+                    if is_combo:
+                        if rest_menu:
+                            combo = rest_menu.get('combo')
+                            if combo:
+                                combo[item] = float(row[1])
+                            else:
+                                rest_menu['combo'] = {item: float(row[1])}
                         else:
-                            rest_menu['combo'] = {item: float(row[1])}
+                            rest_menu = {'combo': {item: float(row[1])}}
                     else:
-                        rest_menu = {'combo': {item: float(row[1])}}
-                else:
-                    if rest_menu:
-                        rest_menu[item] = float(row[1])
-                    else:
-                        rest_menu = {item: float(row[1])}
-                self.menu[rest] = rest_menu
+                        if rest_menu:
+                            rest_menu[item] = float(row[1])
+                        else:
+                            rest_menu = {item: float(row[1])}
+                    self.menu[rest] = rest_menu
 
     def __menu_exists(self, order):
         """Return restaurants which can serve the order.
@@ -96,7 +97,9 @@ class Restaurant(object):
                         for comb in itertools.combinations(iterable, i):
                             if (order <= set(reduce(self.__add, comb)) |
                                 set(rest_menu)):
-                                new_price = self.__red(iterable, order)
+                                # new_price = self.__red(iterable, order)
+                                new_price = reduce(self.__add,
+                                                   (c[1] for c in comb))
                                 self.__set_result(new_price, rest_id)
                 else:
                     new_price = rest_menu.get('combo').get(c_option)
